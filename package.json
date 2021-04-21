@@ -1,0 +1,19 @@
+{
+	"name": "shibe-bot",
+	"version": "1.0.0",
+	"description": "he's gonna be your favorite good boi owo",
+	"main": "server.js",
+	"scripts": {
+		"start": "node server.js"
+	},
+	"author": "Jan Royce Maceren",
+	"dependencies": {
+		"dotenv": "^8.2.0",
+		"eris": "^0.15.0",
+		"node-fetch": "^2.6.1",
+		"random-emoji": "^1.0.2",
+		"random-puppy": "^1.1.0",
+		"random-word": "^2.0.0",
+		"random-words": "^1.1.0"
+	}
+}
