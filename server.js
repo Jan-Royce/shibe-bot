@@ -40,7 +40,7 @@ bot.on("messageCreate", (msg) => {
 });
 
 bot.on("messageReactionAdd", (message, emoji, ... reactor) => {
-    let user = reactor.user ?? reactor[0].user;
+    let user = !reactor.user ? reactor[0].user : reactor.user;
     if (user.id == DISCORD_BOT_ID) return;
     processReaction(message, emoji, user, message.channel.id);
 });
