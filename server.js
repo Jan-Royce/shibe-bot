@@ -1,5 +1,4 @@
-//TODO: Find the source of undefined (undefined) responses
-//TODO: get random defition from available definitions
+//TODO: Fix the undefined (undefined) responses
 
 require('dotenv').config();
 const DISCORD_BOT_TOKEN = process.env.DISCORD_BOT_TOKEN;
@@ -213,9 +212,12 @@ function randomWordGame(channelId)
         .then(response => response.json())
         .then(data => {
             let word = data;
+            
+            let wordIndex = getRandomInt(word.length);
+            let defIndex = getRandomInt(word[wordIndex].shortdef.length);
 
-            def = word[0].shortdef[0]; //TODO: get random defition from available definitions
-            partOfSpeech = word[0].fl;
+            def = word[wordIndex].shortdef[defIndex];
+            partOfSpeech = word[wordIndex].fl;
 
             bot.createMessage(
                 channelId,
@@ -469,6 +471,11 @@ function showTurn(username, channelId)
     } else {
         showJoinMessage(username, channelId)
     }
+}
+
+function getRandomInt(max)
+{
+    return Math.floor(Math.random() * max);
 }
 
 bot.connect(3000);
