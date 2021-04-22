@@ -194,6 +194,7 @@ function showNoGameMessage(channelId)
 
 function randomWordGame(channelId)
 {
+    inGame = true;
     randWord = randomWord();
     randWordLength = randWord.length;
     blankWord = "";
@@ -223,8 +224,6 @@ function randomWordGame(channelId)
                 channelId,
                 blankWord + " (" + randWordLength + " letters)\n**DEFINITION**: " + "```css\n" + "(" + partOfSpeech + ") " + def + "\n```"
             );
-
-            inGame = true;
         })
         .catch(err => {
             console.log(err);
