@@ -331,7 +331,7 @@ function guessALetter(username, channelId, letter)
     }
     //check if the whole word is completely guessed
     if (letters == guessWord.length) {
-        showWinMessage(username, channelID);
+        showWinMessage(username, channelId);
         inGame = false;
         guessedLetters = [];
         return;
